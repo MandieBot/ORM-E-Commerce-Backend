@@ -6,6 +6,7 @@ const { Category, Product } = require('../../models');
 router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
+  //this will be a type of join using Sequelize
 });
 
 router.get('/:id', (req, res) => {
