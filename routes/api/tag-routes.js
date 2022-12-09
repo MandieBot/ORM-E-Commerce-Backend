@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//get one tag
 router.get("/:id", async (req, res) => {
   try {
     const tagData = await Tag.findOne({
@@ -27,6 +28,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// create new tag
 router.post("/", (req, res) => {
   Tag.create(req.body)
     .then((response) => {
@@ -37,6 +39,7 @@ router.post("/", (req, res) => {
     });
 });
 
+// update tag by its `id` value
 router.put("/:id", (req, res) => {
   Tag.update(req.body, {
     where: {
@@ -51,6 +54,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
+// delete one tag by its `id` value
 router.delete("/:id", (req, res) => {
   Tag.destroy({
     where: {
