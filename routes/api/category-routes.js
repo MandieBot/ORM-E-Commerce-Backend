@@ -6,6 +6,7 @@ const { Category, Product } = require("../../models");
 //http://localhost:3001/api/categories
 router.get("/", async (req, res) => {
   try {
+    //include
     const catData = await Category.findAll();
     return res.json(catData);
   } catch (error) {
@@ -18,6 +19,7 @@ router.get("/", async (req, res) => {
 //http://localhost:3001/api/categories/:id
 router.get("/:id", async (req, res) => {
   try {
+    //include
     const catData = await Category.findByPk(req.params.id);
     res.status(200).json(catData);
   } catch (error) {}
